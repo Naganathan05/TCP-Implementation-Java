@@ -1,6 +1,7 @@
 # TCP-Implementation-Java
 
 Section 1: Breif Description
+
 ☛ Proposed TCP protocol is an overlay over the un-reliable UDP protocol. Main parts of the protocol are:
 
 ☛ TCPSocket class : This class provides the functionality same as original TCP socket but with fast sending of data. Whole file can be just passed to send function by converting it into bytes and this socket will make sure it reaches destination.
@@ -10,6 +11,7 @@ Section 1: Breif Description
 ☛ TCPPacket class: This class defines the TCP packet to send through the TCPSocket class object. This class is discussed in detail in section 2.
 
 Section2: Header Fields
+
 ☛ Sequence number : This field is important for informing the sequence number of the packet being sent. This field help in reliably detect which packet are missing by checking which sequence number is expected by the client.
 
 ☛ Ack number: This field contains the least unacknowledged sequence number or the sequence number which the server is expecting.
@@ -25,6 +27,7 @@ Section2: Header Fields
 ☛ Checksum : checksum is used only for checking corruption but not for correcting it.
 
 Section3: Design
+
 ☛ Convert the file into a byte array.
 
 ☛ Used Go back N for implementing reliability with initial window size as 1 MSS. MSS is set as 10000 bytes.
